@@ -1,25 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./static/style.css">
-    <title>Pug API</title>
-</head>
-<body>
-    <ul>
-        <li><a class="active" href="#home">Home</a></li>
-        <li><a href="#vote">Vote</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#about">About</a></li>
-    </ul>
-    <h2>Welcome to the pug api</h2>
+{% extends 'base.html' %}
 
-    <div class="selkie">
-        <img src="./static/selkie.jpg" alt="Panda Pug">
-    </div>
-    <script src="./static/script.js"></script>
-</body>
+{% block content%}
 
-</html>
+    <h2>Welcome to the shark api</h2>
+
+            <div class="shark">
+                <img src="./static/shark_pic.png" class="hi" alt="A friendly shark">
+            </div>
+            <script src="./static/script.js"></script>
+            <div class="wrapper"></div>
+
+{% endblock %}
