@@ -2,12 +2,25 @@
 
 {% block content%}
 
-    <h2>Welcome to the shark api</h2>
-
+    <h2>Welcome to the Friendly Shark API</h2>
             <div class="shark">
                 <img src="./static/shark_pic.png" class="hi" alt="A friendly shark">
             </div>
             <script src="./static/script.js"></script>
             <div class="wrapper"></div>
+
+    <p>Check out my jawsome documentation for more info!
+        Give it a try below.
+    </p>
+    <div class="input-group">
+        <span class="input-group-url">http://www.google.com</span>
+        <input class="slug" type="text" placeholder="something">
+    </div>
+    <div>
+        <form action="http://localhost:5000/uploader" method="POST" enctype="multipart/form-data">
+        <input type="file" name="image"/>
+        <input type="submit" value="upload"/>
+      </form> 
+    </div>
 
 {% endblock %}

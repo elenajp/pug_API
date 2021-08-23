@@ -36,5 +36,13 @@ li a:hover {
     background-color: rgb(9, 78, 158);
 }
 
+.list-class {
+    background-color: #88D3F3;
+}
+
+.input-group-url {
+    background-color: #EEEEEE;
+}
+
 /* *********************************************** */
 
