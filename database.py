@@ -13,3 +13,15 @@ cursor.execute(create_table)
 cursor.execute(
     "INSERT INTO new_table (species, shark_image) VALUES ('greatwhite', './white2.jpg')")
 connection.commit()
+
+
+# cursor.execute('SELECT * FROM new_table')
+# for row in cursor.fetchall():
+#     print(row)
+
+query = cursor.execute('SELECT * FROM new_table')
+colname = [d[0] for d in query.description]
+result_list = [dict(zip(colname, r)) for r in query.fetchall()]
+cursor.close()
+cursor.connection.close()
+print(result_list)
