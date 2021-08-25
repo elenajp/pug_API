@@ -1,16 +1,15 @@
-from flask_sqlalchemy import SQLAlchemy
+import sqlite3
 
-db = SQLAlchemy()
+connection = sqlite3.connect('db.sqlite3')
+cursor = connection.cursor()
 
-# init the db and create tables
+create_table = """CREATE TABLE IF NOT EXISTS
+new_table(image_id INTEGER PRIMARY KEY,
+        species TEXT NOT NULL, 
+        shark_image TEXT NOT NULL)"""
 
+cursor.execute(create_table)
 
-def db_init(app):
-    db.init_app(app)
-
-    # creates tables if db doesnt aleady exist
-    with app.app_context():
-        db.create(all)
-
-
-g
+cursor.execute(
+    "INSERT INTO new_table (species, shark_image) VALUES ('greatwhite', './white2.jpg')")
+connection.commit()
