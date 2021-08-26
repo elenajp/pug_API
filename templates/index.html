@@ -28,16 +28,9 @@
         </div>
         <div>
             <p>Image</p>
-            <!-- <img src="{{ shark_image }}" alt="Shark Image"> -->
             <img src="{{ url_for('get_image', shark_image=shark_filename) }}" alt="Shark Image" class='index_image'>
             
         </div>        
     </div>
-<!--     <div>
-        <form action="http://localhost:5000/uploader" method="POST" enctype="multipart/form-data">
-        <input type="file" name="image"/>
-        <input type="submit" value="upload"/>
-      </form> 
-    </div> -->
 
 {% endblock %}
