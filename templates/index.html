@@ -13,14 +13,24 @@
         Give it a try below.
     </p>
     <div class="input-group">
-        <span class="input-group-url">http://www.google.com</span>
-        <input class="slug" type="text" placeholder="something">
+        <div>
+            <span class="input-group-url">http://127.0.0.1:5000/</span>
+            <input class="slug" type="text" placeholder="something">
+        </div>
+        <div>
+            <p>JSON</p>
+        <pre class="json"></pre>
+        </div>
+        <div>
+            <p>Image</p>
+            <img src="" alt="">
+        </div>        
     </div>
-    <div>
+<!--     <div>
         <form action="http://localhost:5000/uploader" method="POST" enctype="multipart/form-data">
         <input type="file" name="image"/>
         <input type="submit" value="upload"/>
       </form> 
-    </div>
+    </div> -->
 
 {% endblock %}
