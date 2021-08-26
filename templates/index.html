@@ -19,11 +19,18 @@
         </div>
         <div>
             <p>JSON</p>
-        <pre class="json"></pre>
+            <pre>asdfasasdfsdfsadfsdafadsfdfdas
+                sdfsdf
+                asdfasasdfsdfsadfsdafadsfdfdasasdf
+                sdfsdf
+                sdfsfdasderer
+            </pre>
         </div>
         <div>
             <p>Image</p>
-            <img src="" alt="">
+            <!-- <img src="{{ shark_image }}" alt="Shark Image"> -->
+            <img src="{{ url_for('get_image', shark_image=shark_filename) }}" alt="Shark Image" class='index_image'>
+            
         </div>        
     </div>
 <!--     <div>
