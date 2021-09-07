@@ -15,7 +15,16 @@
     <div class="input-group">
         <div>
             <span class="input-group-url">http://127.0.0.1:5000/</span>
-            <input class="slug" type="text" placeholder="something">
+            <!-- <input class="slug" type="text" placeholder="something"> -->
+            <form action="/action_page.php" class="slug">
+                <label for="species">Choose a shark species:</label>
+                <select name="sharks" id="shark_species">
+                    <option value="great_white">Great white</option>
+                    <option value="hammer_head">Hammer head</option>
+                </select>
+                <br><br>
+                <input type="submit" value="Submit">
+            </form>
         </div>
         <div>
             <p>JSON</p>
@@ -29,6 +38,7 @@
         <div>
             <p>Image</p>
             <img src="{{ url_for('get_image', shark_image=shark_filename) }}" alt="Shark Image" class='index_image'>
+
             
         </div>        
     </div>
