@@ -34,5 +34,5 @@ colname = [d[0] for d in random_species.description]
 result_list = [dict(zip(colname, r)) for r in random_species.fetchall()]
 cursor.close()
 cursor.connection.close()
-print(result_list)
+print(result_list[0]['shark_image'])
 # print(random.choice(result_list))
