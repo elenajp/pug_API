@@ -1,4 +1,6 @@
+import random
 import sqlite3
+from random import randint
 
 connection = sqlite3.connect('db.sqlite3')
 cursor = connection.cursor()
@@ -10,18 +12,27 @@ new_table(image_id INTEGER PRIMARY KEY,
 
 cursor.execute(create_table)
 
-cursor.execute(
-    "INSERT INTO new_table (species, shark_image) VALUES ('greatwhite', './white2.jpg')")
+# cursor.execute(
+#     "INSERT INTO new_table (species, shark_image) VALUES ('greatwhite', './white2.jpg')")
 connection.commit()
 
 
-# cursor.execute('SELECT * FROM new_table')
-# for row in cursor.fetchall():
-#     print(row)
+# query = cursor.execute('SELECT * FROM new_table')
 
-query = cursor.execute('SELECT * FROM new_table')
-colname = [d[0] for d in query.description]
-result_list = [dict(zip(colname, r)) for r in query.fetchall()]
+# select a random row for a certain shark species
+random_species = cursor.execute(
+    'SELECT * FROM new_table WHERE species LIKE "greatwhite%" ORDER BY RANDOM() LIMIT 1;')
+
+
+# colname = [d[0] for d in query.description]
+# result_list = [dict(zip(colname, r)) for r in query.fetchall()]
+# cursor.close()
+# cursor.connection.close()
+# print(result_list)
+
+colname = [d[0] for d in random_species.description]
+result_list = [dict(zip(colname, r)) for r in random_species.fetchall()]
 cursor.close()
 cursor.connection.close()
 print(result_list)
+# print(random.choice(result_list))
